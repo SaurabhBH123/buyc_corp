@@ -12,6 +12,6 @@ const oemSchema = mongoose.Schema({
     versionKey:false
 })
 
-const OEM = mongoose.model("OEM",oemSchema)
+const OEMModel = mongoose.model("OEM",oemSchema)
 
-module.exports = {OEM}
+module.exports = {OEMModel}

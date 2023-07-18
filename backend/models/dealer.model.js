@@ -9,6 +9,6 @@ const dealerSchema = mongoose.Schema({
     versionKey:false
 })
 
-const Dealer = mongoose.model("Dealer",dealerSchema)
+const DealerModel = mongoose.model("Dealer",dealerSchema)
 
-module.exports = {Dealer}
+module.exports = {DealerModel}
