@@ -5,12 +5,14 @@ const oemRouter = express.Router()
 oemRouter.get("/",async(req,res)=>{
     const {modelName} = req.query
     try {
-        const query = {}
         if(modelName){
-            query.modelName = modelName
+            const data = await OEMModel.find()
+            const filteredData = data?.filter((car)=>car.modelName.toLowerCase().includes(modelName.toLowerCase()))
+            res.status(200).send(filteredData)
+        }else{
+            const data = await OEMModel.find()
+            res.status(200).send(data)
         }
-        const data = await OEMModel.find(query)
-        res.status(200).send(data)
     } catch (error) {
         res.status(400).send({"msg":error.message})
     }
