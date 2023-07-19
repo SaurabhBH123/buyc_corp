@@ -2,18 +2,24 @@ import { Button, Container, FormControl, FormLabel, Heading, Input, useToast } f
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from "axios";
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/auth/auth.action';
 
 const Login = () => {
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const toast = useToast()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    // const state = useSelector((state)=>state.auth)
+    // console.log(state)
 
     const handleSubmit = (e)=>{
         e.preventDefault()
         axios.post(`http://localhost:8080/auth/login`,{email,password})
         .then((res)=>{
             // console.log(res)
+            dispatch(login())
             toast({
                 title: `${res.data.msg}`,
                 status: 'success',
@@ -44,7 +50,7 @@ const Login = () => {
         <Input type="email" id='email' value={email} placeholder="Enter Email.." onChange={(e)=>setEmail(e.target.value)}/>
         <FormLabel>Password</FormLabel>
         <Input type="password" id="password" value={password} placeholder="Enter Password.." onChange={(e)=>setPassword(e.target.value)}/>
-        <Button type="submit" mt={2} colorScheme="teal" onClick={handleSubmit}>Signup</Button>
+        <Button type="submit" mt={2} colorScheme="teal" onClick={handleSubmit}>Login</Button>
       </FormControl>
     </Container>
   )

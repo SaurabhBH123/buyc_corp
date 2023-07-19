@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const oemSchema = mongoose.Schema({
     modelName:String,
-    year:Number,
+    year:String,
     listPrice:Number,
     colors:[String],
     mileage:Number,

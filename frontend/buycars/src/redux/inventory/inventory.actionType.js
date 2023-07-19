@@ -1,0 +1,5 @@
+export const GET_DATA = "getData"
+export const GET_SPECFIC_DATA = "getSpecificData"
+export const ADD_DATA = "addData"
+export const UPDATE_DATA = "updateData"
+export const DELETE_DATA = "deleteData"
