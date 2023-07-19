@@ -44,7 +44,7 @@ const AddCar = () => {
       registerationPlace,
       price: Number(price),
     };
-    axios.post(`http://localhost:8080/inventory/add`,obj,{
+    axios.post(`https://kind-gold-stingray-hat.cyclic.app/inventory/add`,obj,{
         headers: {
             "Content-Type": "application/json",
             Authorization: localStorage.getItem("token"),

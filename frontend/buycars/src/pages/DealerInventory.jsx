@@ -23,7 +23,7 @@ const DealerInventory = () => {
   // console.log(state.specInventory)
   const getInventorySpecData = () => {
     axios
-      .get(`http://localhost:8080/inventory/getSpecific`, {
+      .get(`https://kind-gold-stingray-hat.cyclic.app/inventory/getSpecific`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: localStorage.getItem("token"),
@@ -81,7 +81,7 @@ const DealerInventory = () => {
                   onClick={() => {
                     axios
                       .delete(
-                        `http://localhost:8080/inventory/delete/${item._id}`,
+                        `https://kind-gold-stingray-hat.cyclic.app/inventory/delete/${item._id}`,
                         {
                           headers: {
                             "Content-Type": "application/json",

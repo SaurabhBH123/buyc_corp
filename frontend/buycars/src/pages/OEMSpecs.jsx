@@ -21,10 +21,10 @@ const OEMSpecs = () => {
   const [orderByMil, setOrderByMil] = useState("");
   //   console.log(state.oem)
 
-  const getData = (query, orderByMil, orderByPrice) => {
+  const getData = (query='', orderByMil='', orderByPrice='') => {
     axios
       .get(
-        `http://localhost:8080/oem?modelName=${query}&orderByPrice=${orderByPrice}&orderByMil=${orderByMil}`
+        `https://kind-gold-stingray-hat.cyclic.app/oem?modelName=${query}&orderByPrice=${orderByPrice}&orderByMil=${orderByMil}`
       )
       .then((res) => {
         dispatch(getOem(res.data));

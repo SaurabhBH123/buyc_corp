@@ -12,7 +12,7 @@ const Signup = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        axios.post(`http://localhost:8080/auth/register`,{name,email,password})
+        axios.post(`https://kind-gold-stingray-hat.cyclic.app/auth/register`,{name,email,password})
         .then((res)=>{
             // console.log(res)
             toast({

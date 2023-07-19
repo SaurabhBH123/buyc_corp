@@ -16,9 +16,9 @@ const Login = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        axios.post(`http://localhost:8080/auth/login`,{email,password})
+        axios.post(`https://kind-gold-stingray-hat.cyclic.app/auth/login`,{email,password})
         .then((res)=>{
-            // console.log(res)
+            console.log(res)
             dispatch(login())
             toast({
                 title: `${res.data.msg}`,
@@ -36,6 +36,7 @@ const Login = () => {
                 status: 'error',
                 isClosable: true,
             })
+            console.log(err)
         })
         .finally(()=>{
             setEmail("")

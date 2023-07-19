@@ -21,10 +21,11 @@ const MarketPlaceInventory = () => {
   const [orderByKms, setOrderByKms] = useState("");
   const dispatch = useDispatch();
 
-  const getInventoryData = (query,orderByKms,orderByPrice) => {
+  const getInventoryData = (query='',orderByKms='',orderByPrice='') => {
     axios
-      .get(`http://localhost:8080/inventory/getAll?modelName=${query}&orderByKms=${orderByKms}&orderByPrice=${orderByPrice}`)
+      .get(`https://kind-gold-stingray-hat.cyclic.app/inventory/getAll?modelName=${query}&orderByKms=${orderByKms}&orderByPrice=${orderByPrice}`)
       .then((res) => {
+        // console.log(res)
         dispatch(getData(res.data));
       })
       .catch((err) => console.log(err));

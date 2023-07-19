@@ -35,7 +35,7 @@ const EditDetails = () => {
 
   const getById = () => {
     axios
-      .get(`http://localhost:8080/inventory/${id}`, {
+      .get(`https://kind-gold-stingray-hat.cyclic.app/inventory/${id}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: localStorage.getItem("token"),
@@ -72,7 +72,7 @@ const EditDetails = () => {
       price: Number(updatedPrice),
     };
     console.log(obj)
-    axios.put(`http://localhost:8080/inventory/update/${id}`,obj,{
+    axios.put(`https://kind-gold-stingray-hat.cyclic.app/inventory/update/${id}`,obj,{
         headers: {
             "Content-Type": "application/json",
             Authorization: localStorage.getItem("token"),
