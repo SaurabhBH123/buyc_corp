@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteData, getSpecific } from "../redux/inventory/inventory.action";
 import { Link } from "react-router-dom";
 
+
 const DealerInventory = () => {
   const state = useSelector((state) => state.inventory);
   const dispatch = useDispatch();
@@ -36,9 +37,7 @@ const DealerInventory = () => {
       .catch((err) => console.log(err));
   };
 
-  //   const handleDelete = (id)=>{
-  //     console.log(id)
-  //   }
+  
   useEffect(() => {
     getInventorySpecData();
   }, []);
@@ -48,6 +47,7 @@ const DealerInventory = () => {
       <Link to="/addcar">
         <Button>Add New Car</Button>
       </Link>
+      
       <Grid templateColumns="repeat(3, 1fr)" gap={6} mt={6}>
         {state.specInventory?.map((item) => {
           return (

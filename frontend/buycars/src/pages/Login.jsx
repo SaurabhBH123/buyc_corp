@@ -18,8 +18,8 @@ const Login = () => {
         e.preventDefault()
         axios.post(`https://kind-gold-stingray-hat.cyclic.app/auth/login`,{email,password})
         .then((res)=>{
-            console.log(res)
-            dispatch(login())
+            // console.log(res)
+            dispatch(login(res.data.name))
             toast({
                 title: `${res.data.msg}`,
                 status: 'success',
